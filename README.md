@@ -5,7 +5,7 @@
     <img alt="NightVision" src="assets/nv-icon.png">
 </picture>
 
-# NightVision Skills for Claude Code
+# NightVision Claude Plugin Marketplace
 
 **Your best defense is a good offense: Give Claude NightVision skills.**
 
@@ -28,7 +28,7 @@ This plugin marketplace gives Claude Code the skills to run NightVision scans, t
 **From the terminal:**
 
 ```bash
-claude plugin marketplace add nvsecurity/skills
+claude plugin marketplace add nvsecurity/claude-marketplace
 claude plugin install nightvision@nvsecurity
 claude
 ```
@@ -36,7 +36,7 @@ claude
 **From inside Claude Code:**
 
 ```
-/plugin marketplace add nvsecurity/skills
+/plugin marketplace add nvsecurity/claude-marketplace
 ```
 ```
 /plugin install nightvision@nvsecurity
@@ -78,7 +78,7 @@ Or invoke skills directly with slash commands:
 
 ## Contributing
 
-Contributions are welcome! Please open an [issue](https://github.com/nvsecurity/skills/issues) or submit a pull request.
+Contributions are welcome! Please open an [issue](https://github.com/nvsecurity/claude-marketplace/issues) or submit a pull request.
 
 ## License
 
