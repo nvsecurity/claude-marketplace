@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "nightvision",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "description": "DAST scanning, API Discovery, and CI/CD integration for NightVision Security",
       "author": {
         "name": "NightVision Engineering",
