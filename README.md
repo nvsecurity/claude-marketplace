@@ -19,7 +19,7 @@
 
 ---
 
-[NightVision](https://www.nightvision.net) is a white-box-assisted DAST platform that combines **API Discovery** (static analysis to extract OpenAPI specs from source code), **dynamic scanning** (ZAP + Nuclei engines), and **Code Traceback** (tracing vulnerabilities back to exact source locations) to find exploitable vulnerabilities in web applications and REST APIs.
+[NightVision](https://www.nightvision.net) is a white-box-assisted DAST platform that combines **Source Intelligence** (static analysis to extract OpenAPI specs from source code), **dynamic scanning** (ZAP + Nuclei engines), and **Code Traceback** (tracing vulnerabilities back to exact source locations) to find exploitable vulnerabilities in web applications and REST APIs.
 
 This plugin marketplace gives Claude Code the skills to run NightVision scans, triage results, and integrate security testing into your CI/CD pipelines — all from natural language.
 
@@ -48,11 +48,11 @@ claude
 
 | Skill | What it does |
 |:------|:-------------|
-| **[`app-security-scan`](plugins/nightvision/skills/app-security-scan/)** | Run the DAST-first app scan harness for local, private, staging, and internal apps: preflight, API Discovery, target create/update, scan start, polling, SARIF export, and a local manifest |
+| **[`app-security-scan`](plugins/nightvision/skills/app-security-scan/)** | Run the DAST-first app scan harness for local, private, staging, and internal apps: preflight, Source Intelligence, target create/update, scan start, polling, SARIF export, and a local manifest |
 | **[`scan-configuration`](plugins/nightvision/skills/scan-configuration/)** | Set up DAST scans — create targets, configure authentication (Playwright, headers, cookies), manage projects, define scope exclusions, and prepare private network scans |
 | **[`scan-report`](plugins/nightvision/skills/scan-report/)** | Generate a shareable PDF security report: an executive summary for AppSec and leadership plus a findings appendix for developers, for one scan, a scan compared with the previous one, or a whole project |
 | **[`scan-triage`](plugins/nightvision/skills/scan-triage/)** | Interpret scan results — read SARIF/CSV findings, understand vulnerabilities, locate the vulnerable code, validate with curl, prioritize by severity, suggest fixes, and mark false positives |
-| **[`api-discovery`](plugins/nightvision/skills/api-discovery/)** | Extract OpenAPI specs from source code via static analysis, troubleshoot extraction issues, compare specs across versions, and leverage Code Traceback |
+| **[`source-intelligence`](plugins/nightvision/skills/source-intelligence/)** | Extract OpenAPI specs from source code via static analysis, troubleshoot extraction issues, compare specs across versions, and leverage Code Traceback; `api-discovery` still loads it |
 | **[`ci-cd-integration`](plugins/nightvision/skills/ci-cd-integration/)** | Wire NightVision into your pipeline — GitHub Actions, GitLab CI, Azure DevOps, Jenkins, BitBucket, and JFrog with SARIF/CSV export and breaking-change detection |
 
 ### Example Usage
@@ -78,7 +78,7 @@ Or invoke skills directly with slash commands:
 /scan-configuration
 /scan-report
 /scan-triage
-/api-discovery
+/source-intelligence
 /ci-cd-integration
 ```
 
