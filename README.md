@@ -5,14 +5,15 @@
     <img alt="NightVision" src="assets/nv-icon.png">
 </picture>
 
-# NightVision Claude Plugin Marketplace
+# NightVision Plugin Marketplace for Claude Code and Codex
 
-**Your best defense is a good offense: Give Claude NightVision skills.**
+**Your best defense is a good offense: give your coding agent NightVision skills.**
 
 <br>
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://docs.anthropic.com/en/docs/claude-code)
+[![Codex](https://img.shields.io/badge/Codex-Plugin-black)](https://github.com/openai/codex)
 [![NightVision](https://img.shields.io/badge/NightVision-DAST-orange)](https://www.nightvision.net)
 
 </div>
@@ -21,9 +22,11 @@
 
 [NightVision](https://www.nightvision.net) is a white-box-assisted DAST platform that combines **Source Intelligence** (static analysis to extract OpenAPI specs from source code), **dynamic scanning** (ZAP + Nuclei engines), and **Code Traceback** (tracing vulnerabilities back to exact source locations) to find exploitable vulnerabilities in web applications and REST APIs.
 
-This plugin marketplace gives Claude Code the skills to run NightVision scans, triage results, and integrate security testing into your CI/CD pipelines — all from natural language.
+This plugin marketplace gives Claude Code and Codex the skills to run NightVision scans, triage results, and integrate security testing into your CI/CD pipelines — all from natural language.
 
 ## Quick Start
+
+### Claude Code
 
 **From the terminal:**
 
@@ -44,6 +47,15 @@ claude
 
 > You may need to restart Claude Code for the plugin to load.
 
+### Codex
+
+```bash
+codex plugin marketplace add https://github.com/nvsecurity/claude-marketplace
+codex plugin add nightvision@nvsecurity
+```
+
+> Start a new Codex session for the skills to load.
+
 ## Skills
 
 | Skill | What it does |
@@ -57,7 +69,7 @@ claude
 
 ### Example Usage
 
-Just ask Claude what you need:
+Just ask your agent what you need:
 
 ```
 > Set up a NightVision scan for my API running on localhost:8080
@@ -71,7 +83,7 @@ Just ask Claude what you need:
 > Extract an OpenAPI spec from this Django project
 ```
 
-Or invoke skills directly with slash commands:
+In Claude Code, invoke skills directly with slash commands:
 
 ```
 /app-security-scan
@@ -81,6 +93,8 @@ Or invoke skills directly with slash commands:
 /source-intelligence
 /ci-cd-integration
 ```
+
+In Codex, the skills are listed as `nightvision:<skill>`, and Codex picks the one your request calls for.
 
 ## Contributing
 
