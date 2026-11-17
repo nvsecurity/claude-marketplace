@@ -66,6 +66,10 @@ codex plugin add nightvision@nvsecurity
 | **[`scan-triage`](plugins/nightvision/skills/scan-triage/)** | Interpret scan results — read SARIF/CSV findings, understand vulnerabilities, locate the vulnerable code, validate with curl, prioritize by severity, suggest fixes, and mark false positives |
 | **[`source-intelligence`](plugins/nightvision/skills/source-intelligence/)** | Generate OpenAPI specs from source code, troubleshoot extraction issues, compare specs across versions, and leverage Code Traceback; `api-discovery` still loads it |
 | **[`ci-cd-integration`](plugins/nightvision/skills/ci-cd-integration/)** | Wire NightVision into your pipeline — GitHub Actions, GitLab CI, Azure DevOps, Jenkins, BitBucket, and JFrog with SARIF/CSV export and breaking-change detection |
+| **[`secure-build`](plugins/nightvision/skills/secure-build/)** | Secure-by-default rules the agent follows while writing a web app or API: access control on every object, parameterized queries, secrets out of code and frontend bundles, sessions, CORS and headers, rate limits, uploads, AI features, and Supabase/Firebase rules |
+| **[`authz-review`](plugins/nightvision/skills/authz-review/)** | Review object-level and function-level access control (BOLA/IDOR, admin actions, mass assignment) route by route with source `file:line`, and write a two-user test the developer runs against their own local or dev app |
+| **[`verify-fix`](plugins/nightvision/skills/verify-fix/)** | Prove a finding is fixed: replay the proof-of-concept request, then rerun only the check that found it against the same target, and report verified or still open |
+| **[`ship-check`](plugins/nightvision/skills/ship-check/)** | The finish line for agent-built apps: review the change, scan the running app, fix what is real in code written this session, verify each fix with a retest, and leave false-positive calls to AppSec |
 
 ### Example Usage
 
@@ -81,6 +85,8 @@ Just ask your agent what you need:
 > Add NightVision to my GitHub Actions workflow
 
 > Extract an OpenAPI spec from this Django project
+
+> Check this app is safe to ship
 ```
 
 In Claude Code, invoke skills directly with slash commands:
@@ -92,9 +98,15 @@ In Claude Code, invoke skills directly with slash commands:
 /scan-triage
 /source-intelligence
 /ci-cd-integration
+/secure-build
+/authz-review
+/verify-fix
+/ship-check
 ```
 
 In Codex, the skills are listed as `nightvision:<skill>`, and Codex picks the one your request calls for.
+
+In Claude Code, the plugin also adds hooks: each session is reminded to follow `secure-build` and offer `ship-check`, and an organization can require `ship-check` before app work is called done. See the [plugin README](https://github.com/nvsecurity/nightvision-skills#hooks-claude-code) for the managed-settings setup.
 
 ## Contributing
 
